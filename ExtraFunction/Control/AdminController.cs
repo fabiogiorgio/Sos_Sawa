@@ -90,7 +90,7 @@ namespace ExtraFunction.Control
 
         [Function("UpdateAdmin")]
         [OpenApiOperation(operationId: "UpdatesAdmin", tags: new[] { "CMS" }, Summary = "Update admin by id", Description = "This endpoint update admin by id")]
-        [OpenApiRequestBody("application/json", typeof(UpdateAdminDTO), Description = "The admin data.")]
+        [OpenApiRequestBody("application/json", bodyType: typeof(UpdateAdminDTO), Description = "The admin data.")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: "application/json", bodyType: typeof(UpdateAdminDTO), Description = "The OK response with the updated admin.")]
         public async Task<HttpResponseData> UpdateAdmin([HttpTrigger(AuthorizationLevel.Anonymous, "put")] HttpRequestData req)           
         {

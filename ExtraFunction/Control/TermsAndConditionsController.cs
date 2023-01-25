@@ -60,7 +60,7 @@ namespace ExtraFunction.Control
 
         [Function(nameof(UpdateTermsAndConditions))]
         [OpenApiOperation(operationId: "Updates Terms and Conditions", tags: new[] { "CMS" }, Summary = "Updates Terms and Conditions", Description = "This endpoint updates terms and conditions")]
-        [OpenApiRequestBody("application/json", typeof(UpdateTermsAndConditionsDTO), Description = "The terms and co data.")]
+        [OpenApiRequestBody("application/json", bodyType: typeof(UpdateTermsAndConditionsDTO), Description = "The terms and co data.")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: "application/json", bodyType: typeof(UpdateTermsAndConditionsDTO), Description = "The OK response with the updated terms and conditions.")]
         public async Task<HttpResponseData> UpdateTermsAndConditions([HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "UpdateTermsAndConditions")] HttpRequestData req)
         {

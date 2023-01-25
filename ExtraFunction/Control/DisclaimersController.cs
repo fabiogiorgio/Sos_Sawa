@@ -55,7 +55,7 @@ namespace ExtraFunction.Control
 
         [Function(nameof(UpdateDisclaimers))]
         [OpenApiOperation(operationId: "Updates Disclaimer", tags: new[] { "CMS" }, Summary = "Updates a disclaimer", Description = "This endpoint update a disclaimer")]
-        [OpenApiRequestBody("application/json", typeof(UpdateDisclaimersDTO), Description = "The disclaimer data.")]
+        [OpenApiRequestBody("application/json", bodyType: typeof(UpdateDisclaimersDTO), Description = "The disclaimer data.")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: "application/json", bodyType: typeof(UpdateDisclaimersDTO), Description = "The OK response with the updated disclaimer.")]
         public async Task<HttpResponseData> UpdateDisclaimers([HttpTrigger(AuthorizationLevel.Anonymous, "put")] HttpRequestData req)
         {
