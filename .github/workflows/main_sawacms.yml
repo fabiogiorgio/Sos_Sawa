@@ -39,4 +39,4 @@ jobs:
           app-name: 'SawaCMS'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A8535344A6DF4180BBE758830EF42C06 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D5D5AE0D291D4B2FBD378537A9987EC9 }}
